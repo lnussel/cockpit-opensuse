@@ -1,0 +1,12 @@
+/**
+ * PLEASE, DO NOT CHANGE THIS FILE.
+ *
+ * It is here to avoid 404 errors on openSUSE Cockpit patched version when no
+ * package for overriding the default style is installed. If a better
+ * alternative becomes available, it will be removed.
+ *
+ * To know more, please follow below links
+ *
+ *   - https://github.com/cockpit-project/cockpit/pull/17437
+ *   - https://github.com/cockpit-project/cockpit/issues/16359
+ */
