@@ -1,0 +1,161 @@
+@import "fonts.css";
+
+/**
+ * A stylesheet for theming Cockpit via CSS overrides workaround described at
+ * https://github.com/cockpit-project/cockpit/pull/17437
+ *
+ * Only works when using a Cockpit version patched for loading this file in
+ * each HTML page.
+ */
+
+:root {
+  /* Custom theme: variables */
+  /* See https://brand.suse.com and https://suse.eosdesignsystem.com/typography */
+  --PineGreen: #0C322C;
+  --JungleGreen: #30BA78;
+  --DarkerJungleGreen: #0E7E3C;
+  --Mint: #90EBCD;
+  --Fog:  #EFEFEF;
+  --Persimmon: #FE7C3F;
+  --MidnightBlue: #192072;
+  --WaterholeBlue: #2453FF;
+  --BaseFont: Lato, arial, helvetica, sans-serif;
+  --HeadlinesFont: Poppins, san-serif;
+  --MonospaceFont: 'Roboto Mono', monospace;
+  --Headings: "Poppins";
+
+  /* Custom theme: PatternFly overrides */
+
+  /** Fonts **/
+  --pf-global--FontFamily--sans-serif: var(--BaseFont);
+  --pf-global--FontFamily--heading--sans-serif: var(--HeadlinesFont);
+  --pf-global--FontFamily--monospace: var(--MonospaceFont);
+  --pf-global--FontFamily--redhat-updated--sans-serif: var(--BaseFont);
+  --pf-global--FontFamily--redhat-updated--heading--sans-serif: var(--HeadlinesFont);
+  --pf-global--FontFamily--redhat--monospace: var(--MonospaceFont);
+  --pf-global--FontFamily--redhatVF--sans-serif: var(--BaseFont);
+  --pf-global--FontFamily--redhatVF--heading--sans-serif: var(--HeadlinesFont);
+  --pf-global--FontFamily--redhatVF--monospace: var(--MonospaceFont);
+  --pf-global--FontFamily--overpass--sans-serif: var(--BaseFont);
+  --pf-global--FontFamily--overpass--monospace: var(--BaseFont);
+
+  /** Colors **/
+  --pf-global--primary-color--100: var(--JungleGreen);
+  --pf-global--primary-color--200: var(--DarkerJungleGreen);
+  --pf-global--link--Color: var(--DarkerJungleGreen);
+  --pf-global--link--Color--hover: var(--PineGreen);
+  --pf-global--BackgroundColor--dark-100: var(--PineGreen);
+  --pf-global--BackgroundColor--ligth-100: var(--JungleGreen);
+  --pf-global--danger-color--100: var(--Persimmon);
+
+  /* Custom theme: Cockpit overrides */
+  --ct-color-nav-text: var(--Mint);
+  --ct-color-nav-active-text: var(--Mint);
+}
+
+/* Links and buttons */
+
+a {
+  color: var(--DarkerJungleGreen);
+}
+
+a:hover {
+  color: var(--PineGreen);
+}
+
+.pf-c-button {
+  --pf-c-button--m-primary--BackgroundColor: var(--JungleGreen);
+}
+
+.pf-c-button.pf-m-link {
+  color: var(--DarkerJungleGreen);
+}
+
+.pf-c-button.pf-m-link:hover {
+  color: var(--PineGreen);
+}
+
+/* Progress bars */
+
+.pf-c-progress {
+  --pf-c-progress__indicator--BackgroundColor: var(--JungleGreen);
+  --pf-c-progress__bar--BackgroundColor: var(--Fog);
+  --pf-c-progress__bar--before--Opacity: 0;
+}
+
+.pf-c-progress.pf-m-danger {
+  --pf-c-progress__indicator--BackgroundColor: var(--Persimmon);
+}
+
+/* Main content */
+
+.pf-c-page__main-section {
+  --pf-c-page__main-section--BackgroundColor: var(--Fog);
+}
+
+.pf-c-page__main-section.pf-m-light {
+  --pf-c-page__main-section--BackgroundColor: white;
+}
+
+/* Alerts */
+
+.pf-c-alert.pf-m-info {
+  --pf-c-alert--BorderTopColor: var(--WaterholeBlue);
+  --pf-c-alert__icon--Color: var(--WaterholeBlue);
+}
+
+.pf-l-gallery > .pf-c-alert.pf-m-info,
+.pf-c-alert.pf-m-info {
+  --pf-c-alert--BackgroundColor: white;
+}
+
+.pf-c-alert.pf-m-warning {
+  --pf-c-alert--BorderTopColor: var(--Persimmon);
+  --pf-c-alert__icon--Color: var(--Persimmon);
+}
+
+/* Sidebar navigation */
+
+#host-apps,
+.ct-switcher .pf-m-dark > .pf-c-select__toggle {
+  background-color: var(--pf-global--BackgroundColor--dark-100);
+}
+
+#host-apps a {
+  color: var(--Fog);
+}
+
+.view-hosts a:hover {
+  color: var(--Fog);
+}
+
+#host-apps .pf-c-nav__link.pf-m-current::after {
+  border-color: var(--Mint);
+}
+
+#view-hosts > #page-sidebar {
+  background-color: var(--DarkerJugnleGreen);
+}
+
+/* Subnav search */
+
+.area-ct-subnav .search {
+  margin: 1rem 0;
+}
+
+.area-ct-subnav .pf-c-button.pf-m-link.hint {
+  color: var(--Fog);
+}
+
+/* Charts */
+
+.ct-plot-paths > path {
+  fill: var(--JungleGreen);
+  stroke: var(--JungleGreen);
+}
+
+/* Others */
+
+.cockpit-log-time {
+  font-family: var(--MonospaceFont);
+}
