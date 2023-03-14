@@ -134,7 +134,8 @@ function format_dialog_internal(client, path, start, size, enable_dos_extended, 
     }
 
     const filesystem_options = [];
-    add_fsys("xfs", { value: "xfs", title: "XFS " + _("(recommended)") });
+    add_fsys("btrfs", { value: "btrfs", title: "BTRFS " + _("(recommended)") });
+    add_fsys("xfs", { value: "xfs", title: "XFS" });
     add_fsys("ext4", { value: "ext4", title: "EXT4" });
     add_fsys("vfat", { value: "vfat", title: "VFAT" });
     add_fsys("ntfs", { value: "ntfs", title: "NTFS" });
